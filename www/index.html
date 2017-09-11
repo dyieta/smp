@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Blank App Designer Cordova Web App Project Template</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
+  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
+  * For a quick overview of "meta viewport" and @viewport, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
+  * Additional useful references include:
+  *   http://www.quirksmode.org/mobile/viewports.html
+  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
+  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+-->
+
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+    <style>
+    /* following three (cascaded) are equivalent to above three meta viewport statements */
+    /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+    /* see http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+     <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="js/framework7.3dpanels.css">
+    <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+    <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
+    <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+
+    <!-- Recommended location for your JavaScript libraries -->
+    <!-- These library references (below) are just examples to give you the general idea... -->
+    <!-- <script src="lib/mc/hammer.js"></script> -->
+    <!-- <script src="lib/ft/fastclick.js"></script> -->
+
+<!--
+  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
+  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
+  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
+  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
+-->
+    <script src="cordova.js" id="xdkJScordova_"></script>
+
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
+    
+    
+    <style>
+    
+       
+   .demo-card-header-pic .card-header {
+    height: 75vw;
+    background-size: cover;
+    background-position: center;
+  }  
+    .swiper-custom {
+  position:relative;
+  height:100%;
+}
+.swiper-container {
+  height:100%;
+}
+.swiper-slide {
+  background: #fff;
+}
+.swiper-slide span {
+  text-align:center;
+  display:block;
+  margin: 20px;
+  font-size:21px;
+}
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: none;
+  border:1px solid #aaa;
+  border-radius: 0 0 0 0;
+  opacity:1;
+  cursor: pointer;
+}
+.swiper-pagination-bullet-active {
+  background: #007aff;
+  border-color: #007aff;
+}  
+           .panel .page, .panel .pages, .panel {
+        background-color: #26343d;
+      }
+      .panel .list-block ul {
+        background: none;
+        border:none;
+      }
+      .panel .list-block .item-link {
+        color:#fff;
+      }
+      .panel .list-block .item-link:active {
+        background: rgba(255,255,255,0.2);
+      }
+      .panel .list-block .item-inner {
+        border-bottom-color:rgba(255,255,255,0.2);
+      }
+      .panel .content-block, .panel .content-block-title {
+        color:#fff;
+      }
+     .bgheader{
+            background-image: url("image/bgheader2.png");
+           background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+            padding-top: 80%; 
+        }
+                .navbar:after {
+  display:none;
+}
+        div[class*="col-"] {
+ 
+  text-align: center;
+  color: #000;
+
+  padding: 5px;
+}
+.row {
+  margin-bottom: 15px;
+     margin-top: 30px;
+}
+        .button {
+    color: #26343d;
+    border-color: #26343d;
+}
+/* Active/tapped state */
+.button.active-state {
+    color: white;
+    background-color: #26343d;
+} 
+        .mapel.active-state {
+    color: white;
+   
+}  
+   .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color:#000;
+        opacity: 1;
+        background: rgba(0,0,0,0.2);
+    }
+    .swiper-pagination-bullet-active {
+        color:#fff;
+        background: #007aff;
+    }
+    </style>
+</head>
+
+
+<body class="theme-black">
+<div class="statusbar-overlay"></div>
+<div class="panel-overlay"></div>
+    
+<div class="panel panel-left panel-reveal">
+    <div class="view">
+        <div class="pages">
+          <div class="page">
+            <div class="page-content">
+              <div class="list-block">
+                <ul id="fjawaban">
+                 
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+    
+    <div class="panel panel-right panel-reveal">
+      
+    </div>
+    
+ <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar" style="background:transparent;" style="color:#26343d;">
+          <div class="navbar-inner">
+            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+            <div class="center sliding"></div>
+          
+           
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages  toolbar-through">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page ">
+            <!-- Scrollable page content -->
+            <div class="page-content" style="background-color:#E6E6E6;"> 
+                   <div class="bgheader">
+                    
+                  
+            </div>
+                 <div class="tabs">
+                    <div id="tabhome" class="tab active">
+                        <p class="buttons-row" style="margin-left:30px;margin-right:30px;" >
+  <button href="#" class="button active" id="btry1" onclick="pilihtryout(1)" >Tryout 1</button>
+  <a href="#" class="button  " id="btry2" onclick="pilihtryout(2)">Tryout 2</a>
+</p> 
+<div class="row no-gutter" >
+    <!-- Each "cell" has col-[widht in percents] class -->
+    <div class="col-50" >
+        <a class="mapel" href="#" onclick="pilihmapel(1)" style="color:#26343d;">
+        <img src="image/math.png" style="width:30%;">
+        <p style="line-height:1px"><b>Matematika</b></p>
+            </a>
+    </div>
+    <div class="col-50" >
+        <a class="mapel" href="#" onclick="pilihmapel(2)" style="color:#26343d;">
+        <img src="image/flag.png" style="width:30%;">
+        <p style="line-height:1px"><b>Bahasa Indonesia</b></p>
+        </a>
+    </div>
+    <div class="col-50" onclick="pilihmapel(3)">
+        <a class="mapel" href="#" onclick="pilihmapel(3)" style="color:#26343d;">
+        <img src="image/language.png" style="width:30%;">
+        <p style="line-height:1px"><b>Bahasa Inggris</b></p>
+        </a>
+    </div>
+    <div class="col-50" onclick="pilihmapel(4)">
+        <a class="mapel" href="#" onclick="pilihmapel(4)" style="color:#26343d;">
+        <img src="image/microscope.png" style="width:30%;">
+        <p style="line-height:1px"><b>IPA</b></p>
+        </a>
+    </div>
+</div>  
+                       
+                                     
+                        
+                        
+                                     
+                        
+                     
+                        
+                
+               
+                     </div>
+                      <div id="tabskl" class="tab">
+                        <div class="content-block">
+                           
+                           
+                        </div>
+                    </div>
+                       <div id="tabinfo" class="tab">
+                        <div class="content-block">
+                            <center><img src="image/genta.png" style="width:30%;">
+                              <p style="font-size: 24px;   margin-top: 7px; line-height:24px" >Genta Smart Publisher
+                                <br>
+                                  <br>
+                                <font style="font-size: 12px;  margin-top: 7px;">Jl. Merbabu Timur No. B3 <br> Bibis Luhur RT. 02/22 Banjarsari - Solo
+                                  <br>
+                                  Telp. 0271-858218
+                                    <br>
+                                    Email : penerbitgentasmart@gmail.com
+                                    <br>
+                                    Website : <a href="http://www.genta-smart.com" class="external" target="_system">www.genta-smart.com</a>
+                                  </font>
+                                </p> 
+                          
+                            </center>
+                        </div>
+                    </div>
+                    </div>
+                   
+              </div>
+              <div class="toolbar tabbar theme-white"  >
+    <div class="toolbar-inner ">
+        <a href="#tabhome" class="tab-link active">
+            <i class="f7-icons">home</i>
+            <span class="tabbar-label" style="font-size:8pt;">Home</span>
+        </a>
+        <a href="#" class="tab-link" onclick="  myApp.popup('.popup-skl'); var swiper = new Swiper('.swiper-container', {
+        zoom: true,
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        paginationBulletRender: function (swiper, index, className) {
+            return '<span class=' + className + '>' + (index + 1) + '</span>';
+        }
+    });">
+            <i class="f7-icons">data</i>
+            <span class="tabbar-label" style="font-size:8pt;">Skl Terbaru</span>
+        </a>
+        <a href="#tabinfo" class="tab-link">
+            <i class="f7-icons">info</i>
+            <span class="tabbar-label" style="font-size:8pt;">About</span>
+        </a>
+        
+    </div>
+</div>
+                </div>
+                </div>
+           
+          </div>
+        </div>
+        <!-- Bottom Toolbar-->
+       
+         <div class="popup popup-about">
+             <div class="navbar fixed" style="background-color: #26343d;">
+          <div class="navbar-inner">
+            <div class="left"></div>
+            <div class="center color-white">SCORE</div>
+            <div class="right"> 
+              
+            </div>
+              
+           
+          </div>
+        </div>
+            <div class="content-block">
+                <canvas id="myChart"></canvas>
+           
+               
+                <div class="row  no-gutter" style="margin-bottom: 30px;">
+                    <div class="col-33" id="ebenar" style="color:#4cd964;"></div>
+                    <div class="col-33" id="esalah" style="color:#ff3b30;"></div>
+                    <div class="col-33" id="ekosong" style="color:#26343d;"> </div>   
+                </div>
+      
+                <div class="row">
+                    <div class="col-50">
+                        <a href="#" class="button button-fill  back close-popup" style="background-color:#26343d;">Ulangi</a>
+                    </div>
+                    <div class="col-50">
+                        <a href="#" class="button button-fill  close-popup back " style="background-color:#26343d;">Kembali</a> 
+                    </div>
+                </div>  
+              
+            </div>
+        </div>
+    
+     <div class="popup popup-skl">
+             <div class="navbar fixed" style="background-color: #26343d;">
+          <div class="navbar-inner">
+            <div class="left"></div>
+            <div class="center color-white">SKL Terbaru</div>
+            <div class="right"> 
+              <a href="#" class="close-popup color-white" >Close</a>
+            </div>
+              
+           
+          </div>
+        </div>
+          
+  <div class="swiper-custom "  style="height:90%;">
+                            <div class="swiper-container swiper-init">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="skl/skl1.png">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="skl/skl2.png">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                   <img src="skl/skl3.png">
+                </div>
+            </div>
+                <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="skl/skl4.png">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="skl/skl5.png">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                   <img src="skl/skl6.png">
+                </div>
+            </div>
+             <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                   <img src="skl/skl7.png">
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+         <div class="swiper-pagination swiper-pagination-red"></div>
+        <!-- Add Navigation -->
+   
+       
+</div>
+              
+            </div>
+        </div>
+    
+    
+    
+    
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+  <script type="text/javascript" src="js/framework7.3dpanels.js"></script>
+    <script type="text/javascript" src="bower_components/chart.js/dist/Chart.bundle.min.js"></script>
+</body>
+</html>

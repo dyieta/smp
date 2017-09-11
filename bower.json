@@ -1,0 +1,6 @@
+{
+  "name": "CBTSMP",
+  "dependencies": {
+    "chart.js": "Chart.js#2.6.0"
+  }
+}
